@@ -9,18 +9,18 @@ import org.openqa.selenium.TakesScreenshot;
 import utils.Driver;
 
 import java.io.IOException;
-import java.util.logging.Logger;
+
 
 public class Hooks {
     //private bcz i ll use it only in this class
-    private AppiumDriverLocalService appiumServer = AppiumDriverLocalService.buildDefaultService();
-    final Runtime runtime = Runtime.getRuntime();
+   // private AppiumDriverLocalService appiumServer = AppiumDriverLocalService.buildDefaultService();
+   // final Runtime runtime = Runtime.getRuntime();
     @Before
     public void setUp(){
         //it starts appium server
-        forceStopAppiumServer();
+     //   forceStopAppiumServer();
 
-        appiumServer.start();
+      // appiumServer.start();
 
     }
     @After
@@ -29,17 +29,17 @@ public class Hooks {
         if (scenario.isFailed()) {
             scenario.attach(screenshot, "image/png","screenshots");
         }
-        Driver.quitAppiumDriver();
-        appiumServer.stop();
+   //     Driver.quitAppiumDriver();
+   //     appiumServer.stop();
     }
 
-    public void forceStopAppiumServer() {
+   /* public void forceStopAppiumServer() {
         try {
-            runtime.exec("killall node");
-            runtime.exec("pkill  -i xcodebuild");
+           runtime.exec("killall node");
+           runtime.exec("pkill  -i xcodebuild");
             System.out.println("Kill all nodes");
         } catch (IOException e) {
             e.printStackTrace();
-        }
+
+        }       }*/
     }
-}

@@ -13,7 +13,7 @@ import java.net.URL;
 
 
 public class Driver {
-    private static AppiumDriver<MobileElement> appiumDriver;
+  private static AppiumDriver<MobileElement> appiumDriver;
 
     public static AppiumDriver getAppiumDriver()  {
         URL appiumServerURL = null;
