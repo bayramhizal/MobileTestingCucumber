@@ -1,7 +1,7 @@
 @AppDem
 Feature: API Demo test
 
-  Scenario: Text box data send
+  Scenario Outline: Text box data send
     Given App should install
     And users go on homepage
     And user should click button api demos
@@ -12,7 +12,12 @@ Feature: API Demo test
     And user check wifi
     And user click wifi settings
     Then user sees wifi settings popup
-    And user write test "text"
+    And user write test "<text>"
     And user click ok button
+    And appiumclose
+    Examples:
+    |text|
+    |bayram|
+    |hizal|
 
 

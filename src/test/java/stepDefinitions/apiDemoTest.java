@@ -117,4 +117,9 @@ public class apiDemoTest extends ReusableMethods {
     public void userClickSwitchButton() {
         tapOn( screens.apiDemosScreen().switchNo );
     }
+
+    @And("appiumclose")
+    public void appiumclose() {
+       Driver.quitAppiumDriver();
+    }
 }
