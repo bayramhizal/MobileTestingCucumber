@@ -99,5 +99,22 @@ public class apiDemoTest extends ReusableMethods {
     }
 
 
+    @And("user click switch")
+    public void userClickSwitch() {
+     tapOn(screens.apiDemosScreen().switchButton );
 
+
+    }
+
+
+    @And("user click checkbox")
+    public void userClickCheckbox() {
+
+        tapOn( screens.apiDemosScreen().checkboxFirst );
+    }
+
+    @Then("user click switch button")
+    public void userClickSwitchButton() {
+        tapOn( screens.apiDemosScreen().switchNo );
+    }
 }

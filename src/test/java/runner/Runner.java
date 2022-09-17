@@ -9,7 +9,7 @@ import org.junit.runner.RunWith;
         plugin = {"pretty","html:target/default-cucumber-report"},
         features = "src/test/resources/features",
         glue = "stepDefinitions",
-        tags = "@AppDem",
+        tags = "@Switches",
         dryRun = false
 )
 public class Runner {
