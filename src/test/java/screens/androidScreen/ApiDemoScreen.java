@@ -28,8 +28,31 @@ public class ApiDemoScreen {
     public MobileElement switchfirst;
     @AndroidFindBy(xpath = "(//android.widget.Switch)[2]")
     public MobileElement switchSecond;
+    @AndroidFindBy(xpath = "//android.widget.TextView[@text='Views']")
+    public MobileElement view;
+    @AndroidFindBy(xpath = "//android.widget.TextView[@text='Views']")
+    public MobileElement viewScreen;
 
-    public boolean isApiDemoDisplayed() throws InterruptedException {
+    @AndroidFindBy(xpath = "//android.widget.TextView[@text='Drag and Drop']")
+    public MobileElement dragandDown;
+    @AndroidFindBy(id = "com.touchboarder.android.api.demos:id/drag_dot_1")
+    public MobileElement firstball;
+    @AndroidFindBy(id = "com.touchboarder.android.api.demos:id/drag_dot_2")
+    public MobileElement secondball;
+    @AndroidFindBy(id = "com.touchboarder.android.api.demos:id/drag_dot_hidden")
+    public MobileElement fourthball;
+
+
+
+
+
+
+
+
+
+
+
+  /*  public boolean isApiDemoDisplayed() throws InterruptedException {
         Thread.sleep( 5000 );
         return preferenceHome.isDisplayed();
     }
@@ -37,5 +60,5 @@ public class ApiDemoScreen {
         Thread.sleep( 5000 );
         return preferenceHome.isDisplayed();
     }
-
+*/
 }
