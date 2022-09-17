@@ -12,7 +12,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class ScreenshotStepDefs {
-    @Then("screenshot al")
+    @Then("takescreenshot")
     public void screenshot_al() throws IOException {
         //after verification take screenshot
 //       I use this code to take a screenshot when needed

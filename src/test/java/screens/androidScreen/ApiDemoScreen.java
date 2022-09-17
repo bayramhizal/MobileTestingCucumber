@@ -23,9 +23,11 @@ public class ApiDemoScreen {
     @AndroidFindBy(xpath = "//android.widget.TextView[@text='9. Switch']")
     public MobileElement switchButton;
     @AndroidFindBy(xpath = "//android.widget.CheckBox")
-    public MobileElement checkboxFirst;
+    public MobileElement checkbox;
+    @AndroidFindBy(xpath = "(//android.widget.Switch)[1]")
+    public MobileElement switchfirst;
     @AndroidFindBy(xpath = "(//android.widget.Switch)[2]")
-    public MobileElement switchNo;
+    public MobileElement switchSecond;
 
     public boolean isApiDemoDisplayed() throws InterruptedException {
         Thread.sleep( 5000 );

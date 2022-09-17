@@ -10,4 +10,11 @@ Feature: API Demos Switches
   Scenario: Switch test
     And user click checkbox
     Then user click switch button
-    Then screenshot al
+    Then takescreenshot
+    Scenario: Switch button checks
+      And checkbox should checked
+      And first switchbutton should close
+      And second switchbutton should be opened
+      Then takescreenshot
+
+

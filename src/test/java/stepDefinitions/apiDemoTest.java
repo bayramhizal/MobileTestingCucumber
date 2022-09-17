@@ -110,16 +110,38 @@ public class apiDemoTest extends ReusableMethods {
     @And("user click checkbox")
     public void userClickCheckbox() {
 
-        tapOn( screens.apiDemosScreen().checkboxFirst );
+        tapOn( screens.apiDemosScreen().checkbox);
     }
 
     @Then("user click switch button")
     public void userClickSwitchButton() {
-        tapOn( screens.apiDemosScreen().switchNo );
+        tapOn( screens.apiDemosScreen().switchSecond );
     }
 
     @And("appiumclose")
     public void appiumclose() {
        Driver.quitAppiumDriver();
     }
+
+    @And("checkbox should checked")
+    public void checkboxShouldChecked() {
+        if(screens.apiDemosScreen().checkbox.getAttribute( "checked" ).equals( "false" )){
+            tapOn( screens.apiDemosScreen().checkbox );
+        }
+    }
+
+    @And("first switchbutton should close")
+    public void firstSwitchbuttonShouldClose() {
+        if(screens.apiDemosScreen().switchfirst.getAttribute( "checked" ).equals( "true" )){
+            tapOn( screens.apiDemosScreen().switchfirst );
+        }
+    }
+
+    @And("second switchbutton should be opened")
+    public void secondSwitchbuttonShouldBeOpened() {
+        if(screens.apiDemosScreen().switchSecond.getAttribute( "checked" ).equals( "false" )){
+            tapOn( screens.apiDemosScreen().switchSecond );
+        }
+    }
+
 }
