@@ -151,15 +151,14 @@ public class apiDemoTest extends ReusableMethods {
 
     @And("user click make popup menu")
     public void userClickMakePopupMenu() {
-        wait(3);
         tapOn(screens.popupMenuScreen().popupButton);
     }
 
     @Then("verify popup message")
     public void verifyPopupMessage() {
+    String message=screens.popupMenuScreen().popupMessage.getAttribute( "name" );
+    Assert.assertTrue( message.contains( "Search" ) );
 
-        isElementPresent( screens.popupMenuScreen().popupMessage );
-        wait(3);
     }
 
 

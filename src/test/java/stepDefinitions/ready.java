@@ -20,6 +20,7 @@ public class ready extends ReusableMethods {
     Screens screens=new Screens();
     @And("user click {string}")
     public void userClick(String text) {
+        wait(5);
         tapOnElementWithText(text);
     }
 
