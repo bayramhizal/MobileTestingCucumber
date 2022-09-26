@@ -1,5 +1,6 @@
 package stepDefinitions;
 
+import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.OutputType;
@@ -27,4 +28,6 @@ public class ScreenshotStepDefs {
         // save the screenshot to the path given
         FileUtils.copyFile(source, finalDestination);
     }
+
+
 }

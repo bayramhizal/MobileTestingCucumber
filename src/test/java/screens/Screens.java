@@ -9,7 +9,20 @@ public class Screens {
     private ApiDemoScreen apiDemosScreen;
     private MainScreen mainScreen;
     private AppWifi appwifi;
-
+    private DateWidgetsScreen dateWidgetsScreen;
+    private PopupMenuScreen popupMenuScreen;
+    public  PopupMenuScreen popupMenuScreen(){
+        if (popupMenuScreen==null){
+            popupMenuScreen=new PopupMenuScreen();
+        }
+        return popupMenuScreen;
+    }
+    public DateWidgetsScreen dateWidgetsScreen(){
+        if (dateWidgetsScreen==null){
+            dateWidgetsScreen=new DateWidgetsScreen();
+        }
+        return dateWidgetsScreen;
+    }
 
 
     public ApiDemoScreen apiDemosScreen() {

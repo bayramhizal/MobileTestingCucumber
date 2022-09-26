@@ -18,12 +18,11 @@ public class MainScreen {
     @AndroidFindBy(xpath = "(//android.widget.TextView)[3]")
     public MobileElement apiDemos;
 
-    public boolean isMainScreenDisplayed() throws InterruptedException {
-       Thread.sleep( 5000 );
-       return homePageTitle.isDisplayed();
+
+
     }
 
 
 
 
-}
+

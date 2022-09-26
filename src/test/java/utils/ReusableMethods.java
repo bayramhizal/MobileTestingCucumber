@@ -11,31 +11,31 @@ import java.util.List;
 
 public class ReusableMethods {
 
-         public static void tapOnElementWithText(String text) {
-            List<MobileElement> mobileElementList = Driver.getAppiumDriver().findElementsByClassName("android.widget.TextView");
-            for (MobileElement page: mobileElementList) {
-                if (page.getText().equals(text)){
-                    page.click();
-                }else{
-                    scrollWithUiScrollable(text);
-                }
-                break;
+    public static void tapOnElementWithText(String text) {
+        List<MobileElement> mobileElementList = Driver.getAppiumDriver().findElementsByClassName("android.widget.TextView");
+        for (MobileElement page: mobileElementList) {
+            if (page.getText().equals(text)){
+                page.click();
+            }else{
+                scrollWithUiScrollable(text);
             }
+            break;
         }
+    }
 
-//ikinci alternatif bir method
-        public static void clickOnElementWithText(String elementText) throws InterruptedException {
-            Thread.sleep(4000);
-            List<MobileElement> mobileElementList =Driver.getAppiumDriver().findElementsByXPath("//android.widget.TextView[@text='"+elementText+"']");
-            if (mobileElementList.size()>0){
-                mobileElementList.get(0).click();
-            }else scrollWithUiScrollable(elementText);
-        }
+    //ikinci alternatif bir method
+    public static void clickOnElementWithText(String elementText) throws InterruptedException {
+        Thread.sleep(4000);
+        List<MobileElement> mobileElementList = Driver.getAppiumDriver().findElementsByXPath("//android.widget.TextView[@text='"+elementText+"']");
+        if (mobileElementList.size()>0){
+            mobileElementList.get(0).click();
+        }else scrollWithUiScrollable(elementText);
+    }
 
 
     public static boolean isElementPresent(String text) {
         boolean elementFound = false;
-        List<MobileElement> mobileElementList =Driver.getAppiumDriver().findElementsByXPath("//android.widget.TextView[@text='" + text + "']");
+        List<MobileElement> mobileElementList = Driver.getAppiumDriver().findElementsByXPath("//android.widget.TextView[@text='" + text + "']");
         for (MobileElement el : mobileElementList) {
             if (el.getText().equals(text)) {
                 waitToBeVisible(el, 10);
@@ -56,7 +56,7 @@ public class ReusableMethods {
     }
 
     public static void tapOn(MobileElement element) {
-        waitToBeClickable(element, 5);
+        waitToBeClickable(element, 10);
         element.click();
     }
 
@@ -109,7 +109,4 @@ public class ReusableMethods {
     public static void swipeFromElementToElement(MobileElement el1, MobileElement el2) {
 
     }
-//attribute check
-
-
 }

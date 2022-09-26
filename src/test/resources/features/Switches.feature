@@ -1,6 +1,7 @@
 @Switches
 Feature: API Demos Switches
-  Background:  Given App should install
+  Background:
+     Given App should install
     And users go on homepage
     And user should click button api demos
     Then user on api demos page

@@ -20,7 +20,8 @@ public class apiDemoTest extends ReusableMethods {
 
     @Given("users go on homepage")
     public void users_go_on_homepage() throws InterruptedException {
-        Assert.assertTrue(screens.mainScreen().isMainScreenDisplayed() );
+       // Assert.assertTrue(screens.mainScreen().isMainScreenDisplayed() );
+        Assert.assertTrue(isElementPresent(screens.mainScreen().homePageTitle) );
 
     }
 
@@ -28,33 +29,33 @@ public class apiDemoTest extends ReusableMethods {
     public void user_should_click_button_api_demos()  {
 
    // mainScreen.apiDemos.click();
-        tapOn( screens.mainScreen().apiDemos );
+        tapOn(screens.mainScreen().apiDemos);
     }
 
     @Then("user on api demos page")
     public void user_on_api_demos_page() throws InterruptedException{
        // Assert.assertTrue( apiDemoScreen.isApiDemoDisplayed() );
-        Assert.assertTrue( isElementPresent( screens.apiDemosScreen().preference));
+        Assert.assertTrue(isElementPresent(screens.apiDemosScreen().preference));
     }
 
     @Then("user click preferences button")
     public void user_click_preferences_button() {
 
        // apiDemoScreen.preference.click();
-        tapOn( screens.apiDemosScreen().preference );
+        tapOn(screens.apiDemosScreen().preference);
     }
 
     @Then("user on preferences page")
     public void user_on_preferences_page() throws InterruptedException {
 
      // Assert.assertTrue( apiDemoScreen.isPreferenceDisplayed() );
-        Assert.assertTrue( isElementPresent( screens.apiDemosScreen().preferenceHome ));
+        Assert.assertTrue( isElementPresent(screens.apiDemosScreen().preferenceHome));
     }
 
     @Then("user click preferences dependecies")
     public void user_click_preferences_dependecies() {
        // apiDemoScreen.preDependcies.click();
-        tapOn( screens.apiDemosScreen().preDependcies );
+        tapOn(screens.apiDemosScreen().preDependcies);
 
     }
 
@@ -63,7 +64,7 @@ public class apiDemoTest extends ReusableMethods {
       //  if(appWifi.checkWifiBox.getAttribute( "checked" ).equals( "false" )){
         //    appWifi.checkWifiBox.click();
         if (screens.appWifi().checkWifiBox.getAttribute( "checked" ).equals( "false" )){
-            tapOn( screens.appWifi().checkWifiBox );
+            tapOn(screens.appWifi().checkWifiBox);
         }
         }
 
@@ -72,21 +73,21 @@ public class apiDemoTest extends ReusableMethods {
     @Then("user click wifi settings")
     public void user_click_wifi_settings() {
       //  appWifi.wifiSettingsBox.click();
-        tapOn( screens.appWifi().wifiSettingsBox );
+        tapOn(screens.appWifi().wifiSettingsBox);
 
     }
 
     @Then("user sees wifi settings popup")
     public void user_sees_wifi_settings_popup() {
        // Assert.assertTrue( appWifi.getWifiSettingsText.isDisplayed() );
-        Assert.assertTrue( isElementPresent( screens.appWifi().getWifiSettingsText ) );
+        Assert.assertTrue(isElementPresent( screens.appWifi().getWifiSettingsText ));
 
     }
 
     @And("user write test {string}")
     public void userWriteTest(String string ){
         //appWifi.getWifiSettingsText.sendKeys( string );
-        enterText( screens.appWifi().getWifiSettingsText,string );
+        enterText(screens.appWifi().getWifiSettingsText,string);
     }
 
 
@@ -94,7 +95,7 @@ public class apiDemoTest extends ReusableMethods {
     @Then("user click ok button")
     public void user_click_ok_button() {
        // appWifi.wifiSetOkButton.click();
-        tapOn( screens.appWifi().wifiSetOkButton );
+        tapOn(screens.appWifi().wifiSetOkButton);
 
     }
 
@@ -110,12 +111,13 @@ public class apiDemoTest extends ReusableMethods {
     @And("user click checkbox")
     public void userClickCheckbox() {
 
-        tapOn( screens.apiDemosScreen().checkbox);
+        tapOn(screens.apiDemosScreen().checkbox);
     }
 
     @Then("user click switch button")
     public void userClickSwitchButton() {
-        tapOn( screens.apiDemosScreen().switchSecond );
+
+        tapOn(screens.apiDemosScreen().switchSecond);
     }
 
     @And("appiumclose")
@@ -140,8 +142,20 @@ public class apiDemoTest extends ReusableMethods {
     @And("second switchbutton should be opened")
     public void secondSwitchbuttonShouldBeOpened() {
         if(screens.apiDemosScreen().switchSecond.getAttribute( "checked" ).equals( "false" )){
-            tapOn( screens.apiDemosScreen().switchSecond );
+            tapOn(screens.apiDemosScreen().switchSecond);
+
         }
+
     }
 
+
+    @And("user click make popup menu")
+    public void userClickMakePopupMenu() {
+        tapOn(screens.popupMenuScreen().popupButton);
+    }
+
+    @Then("verify popup message")
+    public void verifyPopupMessage() {
+        isElementPresent( screens.popupMenuScreen().popupMessage );
+    }
 }

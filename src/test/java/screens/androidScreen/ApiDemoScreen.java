@@ -9,6 +9,7 @@ import utils.Driver;
 import javax.xml.xpath.XPath;
 import java.security.cert.X509Certificate;
 import java.time.Duration;
+import java.util.List;
 
 public class ApiDemoScreen {
     public ApiDemoScreen(){
@@ -41,6 +42,8 @@ public class ApiDemoScreen {
     public MobileElement secondball;
     @AndroidFindBy(id = "com.touchboarder.android.api.demos:id/drag_dot_hidden")
     public MobileElement fourthball;
+    @AndroidFindBy(xpath = "//android.widget.TextView[@text='Switches']")
+    public List<MobileElement> switches;
 
 
 
